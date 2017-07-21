@@ -32,10 +32,10 @@ namespace LoggingLevelConsole
             Host: 07/21/2017 10:16:40.885 -03:00 #WARNING: Host 127.0.0.3:9042 considered as DOWN.
             will not be shown
             */
-            Diagnostics.CassandraTraceSwitch.Level = TraceLevel.Warning;
+            Diagnostics.CassandraTraceSwitch.Level = TraceLevel.Error;
 
             // Add a standard .NET trace listener
-            Trace.Listeners.Add(new TextWriterTraceListener(Console.Out));
+            Trace.Listeners.Add(new ConsoleTraceListener());
             
             const string ip = "127.0.0.1";
             var queryOptions = new QueryOptions();
